@@ -22,7 +22,7 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
       - name: Set up nox
-        uses: wntrblm/nox
+        uses: wntrblm/nox@2022.8.7
         with:
           python-versions: ${{ matrix.python }}
       - name: Set up poetry
