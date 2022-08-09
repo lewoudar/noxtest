@@ -22,7 +22,7 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
       - name: Set up nox
-        run: wntrblm/nox
+        uses: wntrblm/nox
       - name: Set up poetry
         uses: abatilo/actions-poetry@v2.1.3
       - name: Lint
