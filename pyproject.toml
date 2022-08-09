@@ -5,7 +5,7 @@ description = ""
 authors = ["le_woudar <kevin.tewouda@gandi.net>"]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.7"
 httpx = "^0.23.0"
 
 [tool.poetry.dev-dependencies]

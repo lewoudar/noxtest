@@ -22,9 +22,9 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
       - name: Set up nox
-        run: pipx install nox
+        run: wntrblm/nox
       - name: Set up poetry
-        run: pipx install poetry
+        uses: abatilo/actions-poetry@v2.1.3
       - name: Lint
         run: nox -s lint
       - name: Security checks
