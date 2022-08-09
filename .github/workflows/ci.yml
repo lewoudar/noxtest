@@ -22,7 +22,7 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
       - name: Set up nox
-        uses: wntrblm/nox
+        run: pipx install nox
       - name: Set up poetry
         run: pipx install poetry
       - name: Lint
