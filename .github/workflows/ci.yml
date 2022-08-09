@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    timeout-minutes: 20
+    runs-on: ${{ matrix.os }}
+    strategy:
+      max-parallel: 6
+      matrix:
+        os: [ 'ubuntu-latest', 'macos-latest' ]
+        python: [ pypy-3.7, pypy-3.8, 3.7, 3.8, 3.9, '3.10' ]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python ${{ matrix.python }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Set up nox
+        uses: wntrblm/nox
+      - name: Set up poetry
+        run: pipx install poetry
+      - name: Lint
+        run: nox -s lint
+      - name: Security checks
+        run: nox -t security
+      - name: Tests
+        run: nox -s tests
