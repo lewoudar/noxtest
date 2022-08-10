@@ -23,8 +23,8 @@ jobs:
 #          python-version: ${{ matrix.python }}
       - name: Set up nox
         uses: wntrblm/nox@2022.8.7
-        with:
-          python-versions: ${{ matrix.python }}
+#        with:
+#          python-versions: ${{ matrix.python }}
       - name: Lint
         run: nox -s lint
       - name: Security checks
