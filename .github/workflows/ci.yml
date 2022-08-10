@@ -14,13 +14,13 @@ jobs:
       max-parallel: 6
       matrix:
         os: [ 'ubuntu-latest', 'macos-latest' ]
-        python: [ pypy-3.7, pypy-3.8, 3.7, 3.8, 3.9, '3.10' ]
+        # python: [ pypy-3.7, pypy-3.8, 3.7, 3.8, 3.9, '3.10' ]
     steps:
       - uses: actions/checkout@v2
-      - name: Set up Python ${{ matrix.python }}
-        uses: actions/setup-python@v2
-        with:
-          python-version: ${{ matrix.python }}
+#      - name: Set up Python ${{ matrix.python }}
+#        uses: actions/setup-python@v2
+#        with:
+#          python-version: ${{ matrix.python }}
       - name: Set up nox
         uses: wntrblm/nox@2022.8.7
         with:
